@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecasts</title>
+</head>
+<body>
+<div th:object="${forecast}" align="center">
+    <h1>Forecast in</h1>
+    <h1 th:text="*{name}"></h1>
+
+
+    <p th:text="*{date}"></p>
+
+
+    <table  border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Tempature</th>
+            <th>Feels like</th>
+            <th>Wind Speed</th>
+            <th>Wind Degrees</th>
+            <th>Humidity</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr >
+
+            <td th:text="*{main.temp  - 273.15}"></td>
+            <td th:text="*{main.feels_like  - 273.15}"></td>
+            <td th:text="*{wind.speed}"  ></td>
+            <td th:text="*{wind.deg}"></td>
+            <td th:text="*{main.humidity}"></td>
+
+
+
+
+
+
+
+
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

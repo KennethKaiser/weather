@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecasts</title>
+</head>
+<body>
+<div align="center">
+    <h1>Forecasts</h1>
+
+
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Dato</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="forecast : ${forecastList}">
+
+
+            <td th:text="${forecast.date}">Dato</td>
+
+
+
+            <td>&nbsp;
+                <a th:href="@{'/ViewForecast/' + ${forecast.forecast_id}}">Edit</a>
+                <a th:href="@{'/DeleteForecast/' + ${forecast.forecast_id}}">Slet</a>
+            </td>
+
+
+
+
+
+        </tr>
+        <a th:href="@{'/newForecast'}">Make a new forecast</a>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
